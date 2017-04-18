@@ -64,10 +64,14 @@ public class SolutionTouTiao1 {
         int curHeadData=array[0];
         int count=0;
         for(int i=1;i<arrayLen;i++){
+            if(i%3==0){
+                curHeadData=array[i];
+                continue;
+            }
             if(array[i]-curHeadData>10){
                 curHeadData+=10;
                 count++;
-            }else if(array[i]-curHeadData<=10){
+            }else{
                 curHeadData=array[i];
             }
         }
