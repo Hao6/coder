@@ -36,8 +36,11 @@ public class SolutionTT2Test extends TestCase {
         float a=89.89f;
         int itemNum=3;
         float totalPrice=a*itemNum;
-        float num=(float)(Math.round(totalPrice*100)/100);
-        System.out.println(num);
+        //float num=(float)(Math.round(totalPrice*100)/100);
+        //使float保留n位小数
+        System.out.println(totalPrice);
+        String aStr=String .format("%.4f",totalPrice);
+        System.out.println(aStr);
     }
 
 }
