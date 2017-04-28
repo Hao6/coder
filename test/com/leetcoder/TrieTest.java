@@ -42,7 +42,7 @@ public class TrieTest extends TestCase {
         System.out.println(testTrie.startsWith("hi"));
         System.out.println(testTrie.startsWith(""));
         System.out.println(testTrie.startsWith(null));
-        System.out.println(testTrie.startsWith("he"));
+        System.out.println(testTrie.startsWith("him"));
         System.out.println(testTrie.startsWith("ab"));
         System.out.println(testTrie.startsWith("abc"));
 
