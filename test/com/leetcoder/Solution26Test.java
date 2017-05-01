@@ -2,6 +2,8 @@ package com.leetcoder;
 
 import junit.framework.TestCase;
 
+import java.util.Random;
+
 /**
  * Created by hongji on 2017/4/15.
  */
@@ -18,6 +20,12 @@ public class Solution26Test extends TestCase {
         assertEquals(4,s26.removeDuplicates(array));
         for(int i=0;i<4;i++){
             System.out.println(array[i]);
+        }
+    }
+    public void testRandom()throws Exception{
+        Random random=new Random();
+        for(int i=0;i<50;i++){
+            System.out.print(random.nextInt(20)+" ");
         }
     }
 
