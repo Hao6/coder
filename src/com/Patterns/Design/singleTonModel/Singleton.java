@@ -1,4 +1,4 @@
-package com.Patterns.Design;
+package com.Patterns.Design.singleTonModel;
 
 /**
  * Created by hongji on 2017/3/5.
@@ -6,7 +6,7 @@ package com.Patterns.Design;
 
 /**
  * 饿汉式，线程安全，比较浪费资源，实例在类的生命周期内一直存活
- * 利用类的加载机制确保多线程安全
+ * 利用类的加载机制确保多线程安全，非延迟加载，可能造成内存浪费
  */
 public class Singleton {
     int data;

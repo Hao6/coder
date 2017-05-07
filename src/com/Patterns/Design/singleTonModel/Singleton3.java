@@ -1,8 +1,10 @@
-package com.Patterns.Design;
+package com.Patterns.Design.singleTonModel;
 
 /**
  * Created by hongji on 2017/4/7.
  */
+
+//静态内部类实现，延迟加载，线程安全，效率高
 public class Singleton3 {
     int data;
     private Singleton3(){

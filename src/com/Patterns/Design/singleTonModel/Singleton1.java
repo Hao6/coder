@@ -1,6 +1,8 @@
-package com.Patterns.Design; /**
+package com.Patterns.Design.singleTonModel; /**
  * Created by hongji on 2017/3/5.
  */
+
+import java.io.IOException;
 
 /**
  * 单例模式，同步懒汉模式，缺点，每次调用函数都需要加锁，开销太大。
@@ -15,7 +17,8 @@ public class Singleton1 {
         if(instance==null){   //no thread safe
             instance=new Singleton1(5);
         }
-        return instance;
+        throw new RuntimeException("gu");
+        //return instance;
     }
     public static void main(String []args){
         Singleton1 newInstance= Singleton1.getInstance();

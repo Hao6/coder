@@ -14,7 +14,7 @@ public class Solution386Test extends TestCase {
     public void setUp() throws Exception {
         super.setUp();
         s386=new Solution386();
-        n=12;
+        n=1000;
     }
 
     public void testLexicalOrder() throws Exception {
