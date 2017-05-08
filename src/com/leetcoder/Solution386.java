@@ -16,13 +16,13 @@ public class Solution386 {
     }
 
     public void addNum(int n, int curData, List<Integer> dataList) {
-        for(int i=0;i<=9;i++){
-            if(curData+i<=n && !(i==9 && curData==1)){
-                dataList.add(curData+i);
-            }else{
+        for (int i = 0; i <= 9; i++) {
+            if (curData + i <= n && !(i == 9 && curData == 1)) {
+                dataList.add(curData + i);
+            } else {
                 return;
             }
-            addNum(n,(curData+i)*10,dataList);
+            addNum(n, (curData + i) * 10, dataList);
         }
     }
 }
