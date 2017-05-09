@@ -13,7 +13,7 @@ abstract class Inning{
     public void event()throws BaseballException{
 
     }
-    public abstract void atBat()throws Foul,Strike;
+    public abstract void atBat()throws Foul,Strike,RainedOut;
     public void walk(){}
 }
 
@@ -36,14 +36,14 @@ public class StormyInning extends Inning implements Storm {
     public void event(){
 
     }
-    public void rainHard(){  //实现的接口方法可以抛出任意类型的异常
+    public void rainHard()throws RainedOut{  //实现的接口方法可以抛出任意类型的异常
 
     }
 //    public void event()throws Foul{}
-    public StormyInning()throws BaseballException,Foul,PopFoul{
+    public StormyInning()throws BaseballException,RainedOut{  //构造器抛出的多余异常仍然需要捕获
 
     }
-    public StormyInning(String s)throws BaseballException,Strike{
+    public StormyInning(String s)throws BaseballException{
 
     }
 //    void walk(){  //Compile error
@@ -54,5 +54,37 @@ public class StormyInning extends Inning implements Storm {
 //    public void event()throws RainedOut{
 //
 //    }
+
+public static void main(String[] args) {
+
+    try {
+        StormyInning si=new StormyInning();
+        si.atBat();
+    }catch (PopFoul e) {
+        e.printStackTrace();
+    }catch (Foul e) {
+        e.printStackTrace();
+    }
+    catch (BaseballException e) {
+        e.printStackTrace();
+    }catch (RainedOut e){
+        e.printStackTrace();
+    }
+
+    try {
+        Inning i=new StormyInning("abc");
+        i.atBat();   //必须捕获或者抛出基类方法抛出的异常，即使基类方法是一个抽象方法
+    } catch (Foul e) {
+        e.printStackTrace();
+    }
+    catch (Strike e) {   //编译器不允许捕获完全相同的异常多次，但允许捕获具有父子类关系的两个异常
+        e.printStackTrace();
+    } catch (RainedOut e) {
+        e.printStackTrace();
+    }
+    catch (BaseballException e) {
+        e.printStackTrace();
+    }
+}
 
 }
