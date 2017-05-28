@@ -1,6 +1,10 @@
 package Concurrent.ThinkingInJava.unit19;
 
+import java.util.ArrayList;
 import java.util.EnumSet;
+import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * Created by hao on 17-5-2.
