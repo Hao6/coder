@@ -1,33 +1,19 @@
 package com.multiThread.capter1;
 
-import java.util.concurrent.Executors;
-import java.util.concurrent.ThreadPoolExecutor;
 
 /**
  * Created by hao on 17-5-24.
  */
+
+//Thread.currentThread()，返回当前代码段正在被哪个线程调用
+//直接使用run方法，不会起到创建多线程的作用，仅当做普通方法调用
 public class MainTest {
-    private static final int COUNT_BITS = Integer.SIZE - 3;
-    private static final int CAPACITY   = (1 << COUNT_BITS) - 1;
 
-    // runState is stored in the high-order bits
-    private static final int RUNNING    = -1 << COUNT_BITS;
-    private static final int SHUTDOWN   =  0 << COUNT_BITS;
-    private static final int STOP       =  1 << COUNT_BITS;
-    private static final int TIDYING    =  2 << COUNT_BITS;
-    private static final int TERMINATED =  3 << COUNT_BITS;
-    public static void main(String[] args) {
-        //int []a=new int[Integer.MAX_VALUE/8];
-        System.out.println("当前线程： "+Thread.currentThread().getName());
-        System.out.println(COUNT_BITS);
-        System.out.println(CAPACITY);
-        System.out.println(RUNNING);
-        System.out.println(SHUTDOWN);
-        System.out.println(STOP);
-        System.out.println(TIDYING);
-        System.out.println(TERMINATED);
-
+    public String getCurThread(Thread thread){
+        return "当前线程： " + Thread.currentThread().getName();
     }
-
+    public String getCurThreadID(Thread thread){
+        return "当前线程ID： "+thread.getId();
+    }
 
 }
