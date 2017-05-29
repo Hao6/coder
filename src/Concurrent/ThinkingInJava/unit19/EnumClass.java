@@ -14,7 +14,9 @@ public class EnumClass {
         }
         for(String s:"GROUND,CRAWLING,HANGING".split(",")){
             Shrubbery shrub=Enum.valueOf(Shrubbery.class,s);  //根据传入的类型与字符串，返回与字符串对应的对象
-            System.out.println(shrub);
+            Shrubbery shrub1=Shrubbery.valueOf(s);
+            Enum e=Shrubbery.GROUND;
+            System.out.println(shrub==shrub1);
         }
     }
 }

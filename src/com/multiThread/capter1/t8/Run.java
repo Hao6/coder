@@ -1,4 +1,4 @@
-package com.multiThread.t8;
+package com.multiThread.capter1.t8;
 
 /**
  * Created by hao on 17-5-28.
