@@ -11,20 +11,16 @@ public class PrintString implements Runnable {
     public void setContinuePrint(boolean isContinuePrint){
         this.isContinuePrint=isContinuePrint;
     }
-    public void printStringMethod(){
-        try {
-            while (isContinuePrint == true) {
-                System.out.println("run printStringMethod threadname=" +
-                        Thread.currentThread().getName());
-                Thread.sleep(1000);
-            }
-        }catch (InterruptedException e){
-            e.printStackTrace();
-        }
-    }
 
     @Override
     public void run(){
-        printStringMethod();
+
+        while (isContinuePrint == true) {
+            System.out.println("run printStringMethod threadname=" +
+                    Thread.currentThread().getName());
+            //只要使用输出，不管使用还是没有使用-server，仍旧会被打扰到
+
+        }
+        System.out.println("isContinuePrint == false");
     }
 }
