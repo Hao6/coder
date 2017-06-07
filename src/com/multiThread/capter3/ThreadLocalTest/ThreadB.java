@@ -13,7 +13,7 @@ public class ThreadB extends Thread {
                 System.out.println(Tools.t1.get());
                 Thread.sleep(200);
             }
-        }catch (InterruptedException e){
+        } catch (InterruptedException e){
             e.printStackTrace();
         }
     }
