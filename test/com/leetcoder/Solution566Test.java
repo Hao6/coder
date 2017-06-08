@@ -21,7 +21,7 @@ public class Solution566Test extends TestCase {
         int [][] ret=s566.matrixReshape(nums,r,c);
         for (int[] tempArr : ret){
             for(int temp : tempArr){
-                System.out.println(temp);
+                System.out.print(temp+" ");
             }
             System.out.println();
         }

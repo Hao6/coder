@@ -11,9 +11,11 @@ public class Solution566 {
             return nums;
         }
         int [][]newNums=new int[r][c];
+        int index=0;
         for(int i=0;i<rows;i++){
             for(int j=0;j<columns;j++){
-                newNums[i+j/c][i+j%c]=nums[i][j];
+                index=i*(columns)+j;
+                newNums[index/c][index%c]=nums[i][j];
             }
         }
         return newNums;
