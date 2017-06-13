@@ -12,12 +12,20 @@ public class Solution28Test extends TestCase {
     public void setUp() throws Exception {
         super.setUp();
         s28=new Solution28();
-        needle="qwe";
+        needle = "abaabcaba";
         haystack="w";
     }
 
     public void testStrStr() throws Exception {
         assertEquals(-1,s28.strStr(haystack,needle));
+    }
+
+    public void testFail() throws Exception {
+        int[] fail = s28.fail(needle);
+        int[] fail1 = s28.fail1(needle);
+        for (int i = 0; i < fail.length; i++) {
+            assertEquals(fail[i], fail1[i]);
+        }
     }
 
 }
