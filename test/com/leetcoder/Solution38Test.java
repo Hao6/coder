@@ -11,11 +11,11 @@ public class Solution38Test extends TestCase {
     public void setUp() throws Exception {
         super.setUp();
         s38=new Solution38();
-        n=5;
+        n=7;
     }
 
     public void testCountAndSay() throws Exception {
-        assertEquals("111221",s38.countAndSay(n));
+        assertEquals("13112221",s38.countAndSay(n));
     }
 
 }

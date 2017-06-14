@@ -6,37 +6,32 @@ package com.leetcoder;
 public class Solution38 {
     public String countAndSay(int n) {
         StringBuilder initStr=new StringBuilder("1");
-        StringBuilder retStr=new StringBuilder();
-        int strLen=0;
-        int initChar='0';
-        int curCount=0;
-        for(int i=1;i<=n;i++){
-            strLen=initStr.length();
-            initChar=initStr.charAt(0);
+        StringBuilder helpStr=new StringBuilder();
+        for(int i=1;i<n;i++){
+            int strLen=initStr.length();
+            char curChar=initStr.charAt(0);
+            int curIndex=0;
             for(int j=0;j<strLen;j++){
-                if(initStr.charAt(j)!=initChar && j!=strLen-1){
-                    retStr.append(curCount);
-                    retStr.append(initChar-'0');
-                    curCount=0;
-                    initChar=initStr.charAt(j);
-                }else if(j==strLen-1){
-                    if(initChar==initStr.charAt(j) ) {
-                        retStr.append(curCount + 1);
-                        retStr.append(initChar - '0');
-                    }else {
-                        retStr.append(curCount);
-                        retStr.append(initChar - '0');
-                        retStr.append(1);
-                        retStr.append(initStr.charAt(j)-'0');
+                if(j==strLen-1){
+                    if(initStr.charAt(j)==curChar){
+                        helpStr.append(j-curIndex+1);
+                        helpStr.append(curChar-'0');
+                    }else{
+                        helpStr.append(j-curIndex);
+                        helpStr.append(curChar-'0');
+                        helpStr.append(1);
+                        helpStr.append(initStr.charAt(j));
                     }
-                }else{
-                    curCount++;
+                }else if(initStr.charAt(j)!=curChar){
+                        helpStr.append(j-curIndex);
+                        helpStr.append(curChar-'0');
+                        curChar=initStr.charAt(j);
+                        curIndex=j;
                 }
             }
-            initStr=retStr;
-            retStr=new StringBuilder();
-            curCount=0;
+            initStr=helpStr;
+            helpStr=new StringBuilder();
         }
-        return retStr.toString();
+        return initStr.toString();
     }
 }
